@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Browse thoughtfully made sample journeys from Wanderly, with local experiences and room to explore.">
+  <title>Tour packages — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/packages-data.js" defer></script>
+  <script src="js/packages.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="packages-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+      <nav class="primary-nav details-nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link active" href="packages.html">Packages</a>
+        <a class="nav-link" href="hotels.html">Hotels</a>
+        <a class="nav-link" href="flights.html">Flights</a>
+        <a class="nav-link" href="itinerary.html">Itinerary</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="index.html#experiences">Experiences</a>
+        <a class="nav-link" href="index.html#stories">Our story</a>
+            <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Plan your trip <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="packages-hero">
+      <div class="packages-hero-inner">
+        <a class="packages-back-link" href="index.html">← Back to Wanderly</a>
+        <p class="eyebrow"><span class="eyebrow-dash"></span> Journeys with room to breathe</p>
+        <h1>Find a trip that<br><em>feels like you.</em></h1>
+        <p>Thoughtful little itineraries, made for seeing more and rushing less.</p>
+      </div>
+      <div class="packages-hero-note">CURATED WITH CARE <span>·</span> MADE TO WANDER</div>
+    </section>
+
+    <section class="package-catalog section-wrap" aria-labelledby="package-list-title">
+      <div class="package-catalog-heading">
+        <div><p class="eyebrow"><span class="eyebrow-dash"></span> Choose your kind of elsewhere</p><h2 id="package-list-title">A few good ways to go.</h2></div>
+        <p class="package-demo-note">Sample itineraries and prices shown in USD per traveler.</p>
+      </div>
+
+      <form class="package-filters" id="package-filters">
+        <label class="package-search-field"><span class="filter-label">Search packages</span><input id="package-search" type="search" placeholder="Try Kyoto or slow-down" autocomplete="off"></label>
+        <label><span class="filter-label">Destination</span><select id="filter-destination"><option value="">All destinations</option><option value="Amalfi Coast">Amalfi Coast</option><option value="Kyoto">Kyoto</option><option value="Marrakech">Marrakech</option></select></label>
+        <label><span class="filter-label">Duration</span><select id="filter-duration"><option value="">Any duration</option><option value="short">1–4 days</option><option value="week">5–7 days</option><option value="long">8+ days</option></select></label>
+        <label><span class="filter-label">Price range</span><select id="filter-price"><option value="">Any price</option><option value="under-1500">Under $1,500</option><option value="1500-1999">$1,500–$1,999</option><option value="2000-plus">$2,000+</option></select></label>
+        <button class="filter-reset" id="reset-filters" type="reset">Clear filters <span aria-hidden="true">↺</span></button>
+      </form>
+
+      <p class="package-results-count" id="package-results-count" aria-live="polite"></p>
+      <div class="package-grid" id="package-grid"></div>
+      <div class="package-empty-state" id="package-empty-state" hidden><span aria-hidden="true">⌖</span><h3>No journeys found just yet.</h3><p>Try a different destination or clear a filter to see all sample packages.</p><button class="button detail-home-button" id="empty-reset" type="button">Show all packages <span aria-hidden="true">↗</span></button></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="index.html#stories">Instagram</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>

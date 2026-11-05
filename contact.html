@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Get in touch with Wanderly to explore travel ideas and planning support. This demo form saves messages only in your browser.">
+  <title>Contact Wanderly — Plan Your Next Adventure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/contact.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="contact-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+    <nav class="primary-nav details-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html#home">Home</a><a class="nav-link" href="index.html#destinations">Destinations</a><a class="nav-link" href="packages.html">Packages</a><a class="nav-link" href="hotels.html">Hotels</a><a class="nav-link" href="flights.html">Flights</a><a class="nav-link" href="itinerary.html">Itinerary</a><a class="nav-link" href="gallery.html">Gallery</a><a class="nav-link" href="reviews.html">Reviews</a><a class="nav-link active" href="contact.html" aria-current="page">Contact</a>
+          <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+      </nav>
+    <a class="nav-cta" href="#contact-form">Send an inquiry <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main id="main">
+    <section class="contact-hero" aria-labelledby="contact-title"><div class="contact-hero-inner">
+      <p class="eyebrow"><span class="hero-eyebrow-dot"></span> A good trip starts with a conversation</p>
+      <h1 id="contact-title">Let's Plan Your<br><em>Next Adventure.</em></h1>
+      <p>Tell us what you’re dreaming about. Whether you have a destination in mind or are just beginning to wander, we’d love to hear what matters to you.</p>
+    </div><span class="contact-hero-caption">WANDERLY FIELD NOTES <i>·</i> HERE TO HELP YOU WANDER</span></section>
+    <section class="contact-section section-wrap" aria-label="Contact Wanderly">
+      <div class="contact-intro-row"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Start a conversation</p><h2>Every great journey<br>begins somewhere.</h2></div><p>Send a note using the form, or browse the demo contact details below. We’ll keep your message in this browser only; this page does not send email.</p></div>
+      <div class="contact-info-grid" aria-label="Demonstration contact information">
+        <article class="contact-info-card"><span class="contact-info-icon" aria-hidden="true">✉</span><p class="eyebrow">Email · Demo</p><a href="mailto:hello@example.org">hello@example.org</a><p>Example address for this frontend demonstration.</p></article>
+        <article class="contact-info-card"><span class="contact-info-icon" aria-hidden="true">⌕</span><p class="eyebrow">Phone · Demo</p><a href="tel:+12025550148">+1 (202) 555-0148</a><p>Illustrative number; it is not a Wanderly support line.</p></article>
+        <article class="contact-info-card"><span class="contact-info-icon" aria-hidden="true">⌖</span><p class="eyebrow">Office · Fictional</p><strong>Wanderly Studio</strong><p>123 Sample Lane, Portland, OR 97204<br>Fictional address for the demo.</p></article>
+      </div>
+      <div class="contact-workspace">
+        <aside class="contact-aside"><p class="eyebrow"><span class="eyebrow-dash"></span> Thoughtful travel, together</p><h2>Tell us a little<br>about your plans.</h2><p>Share the details you have so far. A place, a feeling, a question — every starting point is welcome.</p><div class="contact-aside-note"><span aria-hidden="true">✳</span><p>This is a frontend-only demo. Messages are saved to this browser and are not delivered to Wanderly.</p></div><div class="contact-aside-foot"><span>01</span><span>Let the journey take shape</span></div></aside>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="contact-form-heading"><div><p class="eyebrow">We’re listening</p><h2>Send us a note</h2></div><span class="contact-form-mark" aria-hidden="true">w.</span></div>
+          <div class="contact-fields-grid">
+            <div class="contact-field"><label for="contact-name">Full Name <span aria-hidden="true">*</span></label><input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required aria-describedby="contact-name-error"><small class="contact-field-error" id="contact-name-error"></small></div>
+            <div class="contact-field"><label for="contact-email">Email Address <span aria-hidden="true">*</span></label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="contact-email-error"><small class="contact-field-error" id="contact-email-error"></small></div>
+            <div class="contact-field"><label for="contact-subject">Subject <span aria-hidden="true">*</span></label><input id="contact-subject" name="subject" type="text" maxlength="120" required aria-describedby="contact-subject-error"><small class="contact-field-error" id="contact-subject-error"></small></div>
+            <div class="contact-field"><label for="contact-type">Inquiry Type <span aria-hidden="true">*</span></label><select id="contact-type" name="type" required aria-describedby="contact-type-error"><option value="">Choose a topic</option><option>General Inquiry</option><option>Booking Support</option><option>Package Information</option><option>Hotel Support</option><option>Flight Support</option><option>Other</option></select><small class="contact-field-error" id="contact-type-error"></small></div>
+            <div class="contact-field contact-field-full"><label for="contact-message">Message <span aria-hidden="true">*</span></label><textarea id="contact-message" name="message" rows="6" minlength="10" maxlength="2000" required aria-describedby="contact-message-error"></textarea><small class="contact-field-error" id="contact-message-error"></small></div>
+          </div>
+          <div class="contact-submit-row"><p>Fields marked <span aria-hidden="true">*</span> are required.</p><button class="button contact-submit" type="submit">Save demo message <span aria-hidden="true">↗</span></button></div>
+          <p class="contact-form-status" id="contact-form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+    <section class="contact-faq section-wrap" aria-labelledby="contact-faq-heading"><div class="contact-faq-heading"><p class="eyebrow"><span class="eyebrow-dash"></span> A few helpful notes</p><h2 id="contact-faq-heading">Before you set off.</h2></div><div class="contact-faq-list">
+      <details><summary>Can I change the dates in a sample package?</summary><p>The packages on Wanderly are examples for exploring the site. No reservation is made, but you can use the itinerary planner to sketch out dates that work for you.</p></details>
+      <details><summary>Are the hotel prices and flight schedules live?</summary><p>No. Hotel rates, flight details, and package prices shown across this project are sample information for demonstration only.</p></details>
+      <details><summary>Does this form send my message?</summary><p>No. Submitting the form stores the message in local storage in this browser. Nothing is sent to an inbox or external service.</p></details>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="reviews.html">Reviews</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>

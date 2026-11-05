@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Browse thoughtfully selected sample hotels in Kyoto, the Amalfi Coast, and Marrakech.">
+  <title>Hotels — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/hotels-data.js" defer></script>
+  <script src="js/hotels.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="hotels-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+      <nav class="primary-nav details-nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link" href="packages.html">Packages</a>
+        <a class="nav-link active" href="hotels.html">Hotels</a>
+        <a class="nav-link" href="flights.html">Flights</a>
+        <a class="nav-link" href="itinerary.html">Itinerary</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="index.html#experiences">Experiences</a>
+        <a class="nav-link" href="index.html#stories">Our story</a>
+            <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Plan your trip <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hotels-hero">
+      <div class="hotels-hero-inner">
+        <a class="packages-back-link" href="index.html">← Back to Wanderly</a>
+        <p class="eyebrow"><span class="eyebrow-dash"></span> Stay somewhere that stays with you</p>
+        <h1>Find your kind<br>of <em>somewhere.</em></h1>
+        <p>Small, soulful stays chosen for their sense of place.</p>
+      </div>
+      <div class="packages-hero-note">LOCAL FEELING <span>·</span> THOUGHTFUL STAYS</div>
+    </section>
+
+    <section class="hotel-catalog section-wrap" aria-labelledby="hotel-list-title">
+      <div class="package-catalog-heading">
+        <div><p class="eyebrow"><span class="eyebrow-dash"></span> Settle in, wherever you wander</p><h2 id="hotel-list-title">Stays with a story.</h2></div>
+        <p class="package-demo-note">Sample nightly rates shown in USD.</p>
+      </div>
+      <form class="hotel-filters" id="hotel-filters">
+        <label class="hotel-search-field"><span class="filter-label">Search hotels</span><input id="hotel-search" type="search" placeholder="Name or destination" autocomplete="off"></label>
+        <label><span class="filter-label">Destination</span><select id="hotel-destination"><option value="">All destinations</option><option value="kyoto">Kyoto</option><option value="amalfi">Amalfi Coast</option><option value="marrakech">Marrakech</option></select></label>
+        <label><span class="filter-label">Price per night</span><select id="hotel-price"><option value="">Any price</option><option value="under-150">Under $150</option><option value="150-249">$150–$249</option><option value="250-plus">$250+</option></select></label>
+        <label><span class="filter-label">Star rating</span><select id="hotel-rating"><option value="">Any rating</option><option value="3">3 stars & up</option><option value="4">4 stars & up</option><option value="5">5 stars</option></select></label>
+        <button class="filter-reset" type="reset">Clear filters <span aria-hidden="true">↺</span></button>
+      </form>
+      <p class="hotel-results-count" id="hotel-results-count" aria-live="polite"></p>
+      <div class="hotel-grid" id="hotel-grid"></div>
+      <div class="hotel-empty-state" id="hotel-empty-state" hidden><span aria-hidden="true">⌖</span><h3>No stays found just yet.</h3><p>Try another destination or clear a filter to see all sample hotels.</p><button class="button detail-home-button" id="hotel-empty-reset" type="button">Show all hotels <span aria-hidden="true">↗</span></button></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="index.html#stories">Instagram</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>

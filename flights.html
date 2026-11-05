@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Search illustrative sample flights from Kolkata, Delhi, and Mumbai to Wanderly destinations.">
+  <title>Flights — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/flights-data.js" defer></script>
+  <script src="js/flights.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="flights-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+      <nav class="primary-nav details-nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link" href="packages.html">Packages</a>
+        <a class="nav-link" href="hotels.html">Hotels</a>
+        <a class="nav-link active" href="flights.html">Flights</a>
+        <a class="nav-link" href="itinerary.html">Itinerary</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="index.html#experiences">Experiences</a>
+        <a class="nav-link" href="index.html#stories">Our story</a>
+            <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Plan your trip <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="flights-hero">
+      <div class="flights-hero-inner">
+        <a class="packages-back-link" href="index.html">← Back to Wanderly</a>
+        <p class="eyebrow"><span class="eyebrow-dash"></span> The journey starts in the air</p>
+        <h1>Find your way<br><em>out there.</em></h1>
+        <p>Compare a few sample routes to places worth lingering in.</p>
+      </div>
+      <div class="packages-hero-note">SAMPLE SCHEDULES <span>·</span> NOT LIVE FARES</div>
+    </section>
+
+    <section class="flight-search-section section-wrap" aria-labelledby="flight-search-title">
+      <div class="flight-search-heading"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Choose your route</p><h2 id="flight-search-title">Where to next?</h2></div><p>Illustrative flight details and fares for planning inspiration.</p></div>
+      <form id="flight-search-form" class="flight-search-form" novalidate>
+        <div class="flight-form-topline">
+          <label class="trip-type-field"><span class="filter-label">Trip type</span><select id="trip-type"><option value="roundtrip">Round-trip</option><option value="oneway">One-way</option></select></label>
+          <p class="flight-form-note">All times and prices are illustrative sample data.</p>
+        </div>
+        <div class="flight-form-grid">
+          <label><span class="filter-label">From</span><select id="flight-from" required><option value="kolkata">Kolkata (CCU)</option><option value="delhi">Delhi (DEL)</option><option value="mumbai">Mumbai (BOM)</option></select></label>
+          <label><span class="filter-label">To</span><select id="flight-to" required><option value="">Choose a destination</option><option value="kyoto">Kyoto · Kansai International (KIX)</option><option value="amalfi">Amalfi Coast · Naples International (NAP)</option><option value="marrakech">Marrakech · Menara Airport (RAK)</option></select></label>
+          <label><span class="filter-label">Departure</span><input id="departure-date" type="date" required></label>
+          <label id="return-date-field"><span class="filter-label">Return</span><input id="return-date" type="date" required></label>
+          <label><span class="filter-label">Passengers</span><select id="passengers"><option value="1">1 passenger</option><option value="2" selected>2 passengers</option><option value="3">3 passengers</option><option value="4">4 passengers</option><option value="5">5 passengers</option><option value="6">6 passengers</option></select></label>
+          <label><span class="filter-label">Cabin class</span><select id="cabin-class"><option value="economy">Economy</option><option value="premium">Premium Economy</option><option value="business">Business</option><option value="first">First Class</option></select></label>
+        </div>
+        <div class="flight-form-bottom"><p class="flight-validation-message" id="flight-validation-message" aria-live="polite"></p><button class="button flight-search-button" type="submit">Search flights <span aria-hidden="true">↗</span></button></div>
+      </form>
+    </section>
+
+    <section class="flight-results-section section-wrap" id="flight-results-section" aria-labelledby="flight-results-title" hidden>
+      <div class="flight-results-heading"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Sample flight options</p><h2 id="flight-results-title">Routes to explore.</h2><p id="flight-results-route" class="flight-results-route"></p></div><label class="flight-sort"><span class="filter-label">Sort by</span><select id="flight-sort"><option value="cheapest">Cheapest</option><option value="fastest">Fastest</option><option value="earliest">Earliest departure</option></select></label></div>
+      <p class="flight-results-count" id="flight-results-count" aria-live="polite"></p>
+      <div id="flight-results-list" class="flight-results-list"></div>
+      <div id="flight-empty-state" class="flight-empty-state" hidden><span aria-hidden="true">⌖</span><h3>No sample flights on this route.</h3><p>Try another departure city or destination to see the available illustrative routes.</p></div>
+      <p class="flight-disclaimer">These sample schedules, airlines, and prices are for demonstration only. They are not live airline information and cannot be booked.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="index.html#stories">Instagram</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>

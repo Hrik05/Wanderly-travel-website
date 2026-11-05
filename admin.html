@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#233a31">
+  <meta name="description" content="Wanderly frontend demo administration dashboard for managing demo users, travel packages, and sample booking records.">
+  <title>Admin Dashboard — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/packages-data.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <a class="skip-link" href="#admin-main">Skip to admin content</a>
+  <div class="admin-layout" id="admin-app" hidden>
+    <aside class="admin-sidebar" aria-label="Admin sidebar">
+      <a class="brand admin-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+      <div class="admin-sidebar-label">Workspace</div>
+      <nav class="admin-sidebar-nav" aria-label="Admin sections">
+        <a class="admin-side-link active" href="#overview" data-admin-section="overview"><span aria-hidden="true">◫</span> Overview</a>
+        <a class="admin-side-link" href="#users" data-admin-section="users"><span aria-hidden="true">♙</span> Users</a>
+        <a class="admin-side-link" href="#packages" data-admin-section="packages"><span aria-hidden="true">⌑</span> Packages</a>
+        <a class="admin-side-link" href="#bookings" data-admin-section="bookings"><span aria-hidden="true">▤</span> Bookings</a>
+      </nav>
+      <div class="admin-sidebar-bottom"><div class="admin-role-mark"><span>AD</span><div><strong>Administrator</strong><small>Demo access</small></div></div><button id="admin-logout" class="admin-logout-button" type="button"><span aria-hidden="true">↪</span> Log out</button><a href="index.html" class="admin-public-link">← Return to Wanderly</a></div>
+    </aside>
+    <main class="admin-main" id="admin-main">
+      <header class="admin-topbar"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Wanderly control room</p><h1>Admin dashboard</h1></div><div class="admin-topbar-user"><span class="admin-topbar-avatar" id="admin-initials">AD</span><span id="admin-name">Demo administrator</span></div></header>
+      <div class="admin-demo-banner"><span aria-hidden="true">✳</span><p>Frontend demonstration only. Role checks and browser storage can be changed by users and do not provide real authorization. Booking rows below are illustrative demo records.</p></div>
+      <p id="admin-feedback" class="admin-feedback" role="status" aria-live="polite"></p>
+
+      <section class="admin-section" id="overview" aria-labelledby="overview-heading">
+        <div class="admin-section-heading"><div><p class="eyebrow">A quick look</p><h2 id="overview-heading">Overview</h2></div><span class="admin-updated-note">Browser data · updated live</span></div>
+        <div class="admin-stat-grid">
+          <article class="admin-stat-card"><span class="admin-stat-icon" aria-hidden="true">♙</span><p>Registered users</p><strong id="stat-users">0</strong><small>Accounts stored in this browser</small></article>
+          <article class="admin-stat-card"><span class="admin-stat-icon" aria-hidden="true">⌑</span><p>Tour packages</p><strong id="stat-packages">0</strong><small>Current public sample catalog</small></article>
+          <article class="admin-stat-card"><span class="admin-stat-icon" aria-hidden="true">▤</span><p>Booking records</p><strong id="stat-bookings">0</strong><small>Demo records only · no live bookings</small></article>
+        </div>
+        <article class="admin-panel admin-recent-panel"><div class="admin-panel-heading"><div><p class="eyebrow">Recent activity</p><h3>Latest demo booking records</h3></div><a href="#bookings" class="admin-inline-link" data-admin-section="bookings">Manage bookings <span aria-hidden="true">↗</span></a></div><div class="admin-table-scroll"><table class="admin-table"><thead><tr><th>Reference</th><th>Customer</th><th>Type</th><th>Item</th><th>Date</th><th>Status</th></tr></thead><tbody id="recent-bookings-body"></tbody></table></div><p class="admin-table-empty" id="recent-bookings-empty" hidden>No booking records are available.</p></article>
+        <div class="admin-quick-links"><a href="#users" data-admin-section="users"><span>♙</span><strong>Manage users</strong><small>Review registered demo accounts</small><b>↗</b></a><a href="#packages" data-admin-section="packages"><span>⌑</span><strong>Manage packages</strong><small>Edit the public trip catalog</small><b>↗</b></a><a href="#bookings" data-admin-section="bookings"><span>▤</span><strong>Review bookings</strong><small>Update sample record status</small><b>↗</b></a></div>
+      </section>
+
+      <section class="admin-section" id="users" aria-labelledby="users-heading">
+        <div class="admin-section-heading"><div><p class="eyebrow">People & permissions</p><h2 id="users-heading">Users</h2></div><span class="admin-section-count" id="users-count">0 accounts</span></div>
+        <article class="admin-panel"><div class="admin-panel-heading"><div><h3>Registered accounts</h3><p>Only account details are shown. Password hashes are never displayed.</p></div></div><div class="admin-table-controls"><label>Search users<input id="user-search" type="search" placeholder="Name or email"></label><label>Role<select id="user-role-filter"><option value="">All roles</option><option value="user">Traveler</option><option value="admin">Administrator</option></select></label></div><div class="admin-table-scroll"><table class="admin-table"><thead><tr><th>Name</th><th>Email</th><th>Created</th><th>Role</th><th>Actions</th></tr></thead><tbody id="users-table-body"></tbody></table></div><p class="admin-table-empty" id="users-empty" hidden>No users match your filters.</p></article>
+      </section>
+
+      <section class="admin-section" id="packages" aria-labelledby="packages-heading">
+        <div class="admin-section-heading"><div><p class="eyebrow">Journeys in the catalog</p><h2 id="packages-heading">Tour packages</h2></div><button class="button admin-add-button" type="button" id="add-package-button">Add package <span aria-hidden="true">＋</span></button></div>
+        <article class="admin-panel"><div class="admin-panel-heading"><div><h3>Public package catalog</h3><p>Changes save in this browser and appear on the public packages and details pages.</p></div></div><div class="admin-table-controls"><label>Search packages<input id="package-search" type="search" placeholder="Name, destination, or description"></label><label>Destination<select id="package-destination-filter"><option value="">All destinations</option><option>Kyoto</option><option>Amalfi Coast</option><option>Marrakech</option></select></label></div><div class="admin-table-scroll"><table class="admin-table"><thead><tr><th>Package</th><th>Destination</th><th>Duration</th><th>Sample price</th><th>Actions</th></tr></thead><tbody id="packages-table-body"></tbody></table></div><p class="admin-table-empty" id="packages-empty" hidden>No packages match your filters.</p></article>
+      </section>
+
+      <section class="admin-section" id="bookings" aria-labelledby="bookings-heading">
+        <div class="admin-section-heading"><div><p class="eyebrow">Sample travel requests</p><h2 id="bookings-heading">Bookings</h2></div><span class="admin-demo-tag">DEMO RECORDS</span></div>
+        <article class="admin-panel"><div class="admin-panel-heading"><div><h3>Booking records</h3><p>Illustrative records for dashboard demonstration; no real booking system is connected.</p></div></div><div class="admin-table-controls admin-booking-controls"><label>Search bookings<input id="booking-search" type="search" placeholder="Customer or reference"></label><label>Type<select id="booking-type-filter"><option value="">All types</option><option>Tour Package</option><option>Hotel</option><option>Flight</option></select></label><label>Status<select id="booking-status-filter"><option value="">All statuses</option><option>Requested</option><option>In review</option><option>Cancelled</option></select></label></div><div class="admin-table-scroll"><table class="admin-table"><thead><tr><th>Reference</th><th>Customer</th><th>Type</th><th>Item / destination</th><th>Booking date</th><th>Status</th><th>Actions</th></tr></thead><tbody id="bookings-table-body"></tbody></table></div><p class="admin-table-empty" id="bookings-empty" hidden>No booking records match your filters.</p></article>
+      </section>
+      <footer class="admin-footer"><span>Wanderly admin demo</span><span>Client-side workspace · no live customer operations</span></footer>
+    </main>
+  </div>
+
+  <dialog class="admin-dialog" id="package-dialog" aria-labelledby="package-dialog-title"><form id="package-form" class="admin-package-form">
+    <div class="admin-dialog-heading"><div><p class="eyebrow">Catalog editor</p><h2 id="package-dialog-title">Add a package</h2></div><button class="admin-dialog-close" id="close-package-dialog" type="button" aria-label="Close package editor">×</button></div>
+    <input id="package-edit-id" type="hidden">
+    <div class="admin-form-grid">
+      <label>Package name<input id="package-title-input" required maxlength="90"></label>
+      <label>Destination<select id="package-destination-input" required><option value="">Choose destination</option><option value="Kyoto">Kyoto</option><option value="Amalfi Coast">Amalfi Coast</option><option value="Marrakech">Marrakech</option></select></label>
+      <label>Duration<input id="package-duration-input" required maxlength="30" placeholder="7 days"></label>
+      <label>Price in USD<input id="package-price-input" type="number" required min="1" step="1" placeholder="1690"></label>
+      <label class="admin-form-full">Image URL<input id="package-image-input" type="url" required placeholder="https://images.example/photo.jpg"></label>
+      <label class="admin-form-full">Description<textarea id="package-description-input" required maxlength="500" rows="3"></textarea></label>
+      <label class="admin-form-full">Highlights <small>One highlight per line</small><textarea id="package-highlights-input" required maxlength="1000" rows="4"></textarea></label>
+    </div>
+    <p class="admin-dialog-error" id="package-form-error" role="status"></p>
+    <div class="admin-dialog-actions"><button class="admin-cancel-button" id="cancel-package-dialog" type="button">Cancel</button><button class="button admin-save-button" type="submit">Save package <span aria-hidden="true">↗</span></button></div>
+  </form></dialog>
+  <div class="admin-toast" id="admin-toast" role="status" aria-live="polite"></div>
+</body>
+</html>

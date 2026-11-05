@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Find your next meaningful escape with Wanderly. Thoughtful journeys, handpicked stays, and room to explore beyond boundaries.">
+  <title>Wanderly — Explore Beyond Boundaries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#destinations">Destinations</a>
+        <a class="nav-link" href="packages.html">Packages</a>
+        <a class="nav-link" href="hotels.html">Hotels</a>
+        <a class="nav-link" href="flights.html">Flights</a>
+        <a class="nav-link" href="itinerary.html">Itinerary</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="#experiences">Experiences</a>
+        <a class="nav-link" href="#stories">Our story</a>
+            <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Plan your trip <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-image" role="img" aria-label="A winding coastal road above the blue Mediterranean sea"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow hero-eyebrow"><span></span> Go where you feel most alive</p>
+        <h1 id="hero-title">The world is<br>yours to <em>wander.</em></h1>
+        <p class="hero-copy">Thoughtful journeys for the curious. Find your place in the world, one unforgettable moment at a time.</p>
+        <a class="button button-light" href="#destinations">Explore destinations <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-caption"><span class="caption-line"></span><span>Amalfi Coast, Italy</span><span class="caption-dot">·</span><span>40°37′ N 14°36′ E</span></div>
+      <div class="hero-index"><span>01</span><i></i><span>03</span></div>
+      <form class="search-panel" id="destination-search">
+        <label class="search-field location-field"><span class="field-icon" aria-hidden="true">⌖</span><span class="field-content"><span class="field-label">Where to?</span><input id="search-location" type="search" placeholder="Search a destination" autocomplete="off"></span></label>
+        <label class="search-field"><span class="field-icon calendar-icon" aria-hidden="true">▦</span><span class="field-content"><span class="field-label">When</span><select id="search-month"><option value="">Any time</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select></span></label>
+        <label class="search-field guests-field"><span class="field-icon" aria-hidden="true">♧</span><span class="field-content"><span class="field-label">Travelers</span><select id="search-guests"><option value="1">1 traveler</option><option value="2" selected>2 travelers</option><option value="3">3 travelers</option><option value="4">4 travelers</option><option value="5">5+ travelers</option></select></span></label>
+        <button class="search-submit" type="submit"><span>Find your trip</span><span class="search-arrow" aria-hidden="true">↗</span></button>
+      </form>
+      <span class="hero-side-note">MADE FOR THE MOMENTS THAT MOVE YOU</span>
+    </section>
+
+    <section class="intro section-wrap" aria-label="Wanderly introduction">
+      <p class="eyebrow"><span class="eyebrow-dash"></span> A different way to get away</p>
+      <p class="intro-copy">Not just places to go.<br><span>Stories to bring home.</span></p>
+      <p class="intro-note">We believe the best trips leave a little more in you than they take out. That’s why every Wanderly journey is made to feel personal.</p>
+    </section>
+
+    <section class="destinations section-wrap" id="destinations" aria-labelledby="destinations-title">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span class="eyebrow-dash"></span> Find your somewhere</p><h2 id="destinations-title">Places with a pulse.</h2></div>
+        <a class="text-link" href="#experiences">See all destinations <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="search-feedback" id="search-feedback" aria-live="polite"></p>
+      <div class="destination-grid" id="destination-grid">
+        <article class="destination-card card-large" data-destination="amalfi italy coast mediterranean">
+          <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85" alt="Colorful houses perched on the Amalfi Coast" loading="lazy">
+          <a class="destination-open" href="destination-details.html?place=amalfi" aria-label="Explore Amalfi Coast"></a>
+          <div class="card-gradient"></div><button class="save-button" type="button" aria-label="Save Amalfi Coast" aria-pressed="false">♡</button>
+          <div class="destination-info"><span class="card-kicker">ITALY · 7 DAYS</span><h3>Amalfi Coast</h3><p>Salt air, slow afternoons, endless blue.</p></div><span class="card-number">01</span>
+        </article>
+        <article class="destination-card" data-destination="kyoto japan culture gardens">
+          <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=85" alt="A traditional street in Kyoto framed by cherry blossoms" loading="lazy">
+          <a class="destination-open" href="destination-details.html?place=kyoto" aria-label="Explore Kyoto"></a>
+          <div class="card-gradient"></div><button class="save-button" type="button" aria-label="Save Kyoto" aria-pressed="false">♡</button>
+          <div class="destination-info"><span class="card-kicker">JAPAN · 5 DAYS</span><h3>Kyoto</h3><p>Old souls and quiet rituals.</p></div><span class="card-number">02</span>
+        </article>
+        <article class="destination-card" data-destination="marrakech morocco desert medina">
+          <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?auto=format&fit=crop&w=1000&q=85" alt="Warm terracotta architecture in Marrakech" loading="lazy">
+          <a class="destination-open" href="destination-details.html?place=marrakech" aria-label="Explore Marrakech"></a>
+          <div class="card-gradient"></div><button class="save-button" type="button" aria-label="Save Marrakech" aria-pressed="false">♡</button>
+          <div class="destination-info"><span class="card-kicker">MOROCCO · 4 DAYS</span><h3>Marrakech</h3><p>Get lost in a thousand shades.</p></div><span class="card-number">03</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="quote-band" id="stories">
+      <div class="quote-image" role="img" aria-label="Travelers hiking through a mountain landscape"></div>
+      <div class="quote-content"><p class="eyebrow"><span class="eyebrow-dash"></span> The Wanderly feeling</p><blockquote>“Somewhere between leaving and arriving, you find a little more of yourself.”</blockquote><p class="quote-byline">A note from our journal <span>·</span> 4 min read <span class="quote-arrow">↗</span></p></div>
+    </section>
+
+    <section class="experiences section-wrap" id="experiences" aria-labelledby="experiences-title">
+      <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Go a little deeper</p><h2 id="experiences-title">Travel, your way.</h2></div><p class="heading-note">Little details, local connections, and room for the unexpected. Every trip has its own rhythm.</p></div>
+      <div class="experience-grid">
+        <a class="experience-card" href="#contact"><span class="experience-icon" aria-hidden="true">↟</span><span class="experience-count">01 / 03</span><h3>Out in the open</h3><p>Take the long way through wild places and wide skies.</p><span class="experience-link">Explore outdoors <b>↗</b></span></a>
+        <a class="experience-card" href="#contact"><span class="experience-icon" aria-hidden="true">⌂</span><span class="experience-count">02 / 03</span><h3>Stay somewhere special</h3><p>Small, soulful stays with a sense of place.</p><span class="experience-link">Find your stay <b>↗</b></span></a>
+        <a class="experience-card" href="#contact"><span class="experience-icon" aria-hidden="true">✳</span><span class="experience-count">03 / 03</span><h3>Meet the locals</h3><p>See a place through the people who call it home.</p><span class="experience-link">Meet your people <b>↗</b></span></a>
+      </div>
+    </section>
+
+    <section class="newsletter" id="contact"><div class="newsletter-inner"><div><p class="eyebrow"><span class="eyebrow-dash"></span> A little wanderlust, delivered</p><h2>Good places.<br><em>Good stories.</em></h2><p class="newsletter-copy">A considered note on travel, sent when we have something worth sharing.</p></div><form id="newsletter-form" class="newsletter-form" novalidate><label for="newsletter-email">Your email address</label><div class="email-row"><input id="newsletter-email" type="email" placeholder="you@example.com" required><button type="submit" aria-label="Subscribe to travel notes">↗</button></div><p class="form-message" id="newsletter-message" aria-live="polite">No noise, ever. Unsubscribe whenever.</p></form></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#home">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="#stories">Instagram</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>

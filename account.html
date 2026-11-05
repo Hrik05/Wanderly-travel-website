@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Your private Wanderly demo account dashboard.">
+  <title>Your Account — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/account.js" defer></script>
+</head>
+<body class="auth-page account-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+    <nav class="primary-nav details-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html#home">Home</a><a class="nav-link" href="index.html#destinations">Destinations</a><a class="nav-link" href="packages.html">Packages</a><a class="nav-link" href="hotels.html">Hotels</a><a class="nav-link" href="flights.html">Flights</a><a class="nav-link" href="itinerary.html">Itinerary</a><a class="nav-link" href="gallery.html">Gallery</a><a class="nav-link" href="reviews.html">Reviews</a><a class="nav-link" href="contact.html">Contact</a>
+      <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link active" href="account.html" data-auth-link="account" aria-current="page" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+    </nav>
+    <a class="nav-cta" href="index.html">Explore Wanderly <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main id="main" class="account-main" hidden>
+    <section class="account-hero"><div class="account-hero-inner"><p class="eyebrow"><span class="hero-eyebrow-dot"></span> Your Wanderly space</p><h1>Welcome, <em id="account-name">wanderer</em>.</h1><p>Your profile is ready for the places, plans, and stories you’ll collect along the way.</p></div></section>
+    <section class="account-content section-wrap">
+      <div class="account-profile-card"><div class="account-avatar" id="account-initials" aria-hidden="true">W</div><div class="account-profile-copy"><p class="eyebrow"><span class="eyebrow-dash"></span> Demo account</p><h2>Account information</h2><p>This profile is stored on this device for the Wanderly frontend demonstration.</p><span class="account-role-badge" id="account-role">Traveler · Demo</span><a class="account-admin-link" id="account-admin-link" href="admin.html" hidden>Open admin dashboard <span aria-hidden="true">↗</span></a></div><button class="button account-logout" type="button" id="logout-button">Log Out <span aria-hidden="true">↗</span></button></div>
+      <div class="account-details-grid"><article class="account-detail-card"><span class="account-detail-kicker">01 / YOUR PROFILE</span><p>Full Name</p><strong id="account-full-name">—</strong></article><article class="account-detail-card"><span class="account-detail-kicker">02 / YOUR EMAIL</span><p>Email Address</p><strong id="account-email">—</strong></article><article class="account-detail-card"><span class="account-detail-kicker">03 / ACCOUNT SINCE</span><p>Created</p><strong id="account-created">—</strong></article></div>
+      <div class="account-demo-note"><span aria-hidden="true">✳</span><p>Demo only: this account is not connected to a real service. Client-side hashing and browser storage do not provide production authentication security.</p></div>
+      <div class="account-explore-links"><a href="itinerary.html" class="text-link">Open your itinerary planner <span aria-hidden="true">↗</span></a><a href="index.html#destinations" class="text-link">Explore destinations <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="contact.html">Contact Us</a><a href="index.html#destinations">Explore</a></div></div></footer>
+</body>
+</html>

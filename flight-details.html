@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Review an illustrative Wanderly flight itinerary and fare summary.">
+  <title>Flight details — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/flights-data.js" defer></script>
+  <script src="js/flight-details.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="flight-details-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+      <nav class="primary-nav details-nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link" href="packages.html">Packages</a>
+        <a class="nav-link" href="hotels.html">Hotels</a>
+        <a class="nav-link active" href="flights.html">Flights</a>
+        <a class="nav-link" href="itinerary.html">Itinerary</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="index.html#experiences">Experiences</a>
+        <a class="nav-link" href="index.html#stories">Our story</a>
+            <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Plan your trip <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="flight-detail-banner">
+      <div class="flight-detail-banner-inner section-wrap">
+        <a class="detail-back-link" href="flights.html"><span aria-hidden="true">←</span> Back to flight search</a>
+        <p class="eyebrow detail-eyebrow"><span class="hero-eyebrow-dot"></span> Illustrative itinerary · Not live travel information</p>
+        <h1 id="flight-detail-title">Your route, at a glance.</h1>
+        <div class="flight-detail-airline"><span class="airline-monogram" id="detail-airline-logo"></span><span><strong id="detail-airline-name"></strong><small id="detail-flight-number"></small></span></div>
+      </div>
+    </section>
+
+    <section class="flight-detail-content section-wrap" id="flight-detail-content">
+      <div class="flight-detail-main">
+        <section class="flight-itinerary-section" aria-labelledby="itinerary-title"><div class="flight-section-heading"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Your sample itinerary</p><h2 id="itinerary-title">Journey details</h2></div><span class="flight-trip-type-badge" id="detail-trip-type"></span></div><div id="flight-itinerary-legs" class="flight-itinerary-legs"></div></section>
+        <section class="flight-traveler-card" aria-labelledby="traveler-title"><p class="eyebrow"><span class="eyebrow-dash"></span> Passenger summary</p><h2 id="traveler-title">Travel details</h2><div class="traveler-summary-grid"><div><span>Passengers</span><strong id="detail-passengers"></strong></div><div><span>Cabin class</span><strong id="detail-cabin"></strong></div><div><span>Baggage allowance</span><strong id="detail-baggage"></strong></div></div></section>
+        <section class="flight-fare-card" aria-labelledby="fare-title"><p class="eyebrow"><span class="eyebrow-dash"></span> Sample fare estimate</p><h2 id="fare-title">Fare breakdown</h2><p class="fare-subtitle" id="fare-subtitle"></p><div class="fare-rows"><div class="fare-row"><span>Base fare</span><strong id="fare-base"></strong></div><div class="fare-row"><span>Taxes and fees</span><strong id="fare-taxes"></strong></div><div class="fare-row fare-total"><span>Sample total</span><strong id="fare-total"></strong></div></div><p class="fare-note">All prices are illustrative only and are not live quotes or bookable fares.</p></section>
+        <div class="flight-continue-row"><p>Review complete? You can continue exploring your trip.</p><button class="button flight-continue-button" type="button">Continue <span aria-hidden="true">↗</span></button></div>
+      </div>
+      <aside class="flight-route-aside"><span class="aside-route-icon" aria-hidden="true">✈</span><p class="eyebrow">Route</p><h2 id="aside-route"></h2><p id="aside-route-codes"></p><a class="hotel-discovery-link" id="return-to-search" href="flights.html">Back to search results <span aria-hidden="true">↗</span></a><a class="hotel-discovery-link flight-itinerary-link" id="flight-itinerary-link" href="itinerary.html">Add flight information to an itinerary <span aria-hidden="true">↗</span></a></aside>
+    </section>
+
+    <section class="flight-invalid section-wrap" id="flight-invalid" hidden><span aria-hidden="true">⌖</span><p class="eyebrow"><span class="eyebrow-dash"></span> A little detour</p><h1>We couldn't find that sample flight.</h1><p>That flight link may be out of date. Search the available illustrative routes to find another way to wander.</p><a class="button detail-home-button" href="flights.html">Search sample flights <span aria-hidden="true">↗</span></a></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="index.html#stories">Instagram</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>

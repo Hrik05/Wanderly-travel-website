@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Wander through a collection of travel photographs from Kyoto, the Amalfi Coast, Marrakech, and beyond.">
+  <title>Gallery — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/gallery-data.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="gallery-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+      <nav class="primary-nav details-nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link" href="packages.html">Packages</a>
+        <a class="nav-link" href="hotels.html">Hotels</a>
+        <a class="nav-link" href="flights.html">Flights</a>
+        <a class="nav-link" href="itinerary.html">Itinerary</a>
+        <a class="nav-link active" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="index.html#stories">Our story</a>
+            <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Plan your trip <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="gallery-hero">
+      <div class="gallery-hero-inner">
+        <a class="packages-back-link" href="index.html">← Back to Wanderly</a>
+        <p class="eyebrow"><span class="eyebrow-dash"></span> A world of little moments</p>
+        <h1>See where the<br><em>feeling takes you.</em></h1>
+        <p>Places, colors, and passing moments worth carrying home.</p>
+      </div>
+      <div class="packages-hero-note">WANDERLY FIELD NOTES <span>·</span> PHOTO STORIES</div>
+    </section>
+
+    <section class="gallery-section section-wrap" aria-labelledby="gallery-title">
+      <div class="gallery-heading"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Look a little closer</p><h2 id="gallery-title">Postcards from elsewhere.</h2></div><p class="gallery-count" id="gallery-count" aria-live="polite"></p></div>
+      <div class="gallery-controls">
+        <div class="gallery-category-filter" role="group" aria-label="Filter photos by theme">
+          <button class="gallery-category-button active" type="button" data-category="all" aria-pressed="true">All</button>
+          <button class="gallery-category-button" type="button" data-category="Nature" aria-pressed="false">Nature</button>
+          <button class="gallery-category-button" type="button" data-category="Architecture" aria-pressed="false">Architecture</button>
+          <button class="gallery-category-button" type="button" data-category="Culture" aria-pressed="false">Culture</button>
+          <button class="gallery-category-button" type="button" data-category="Beaches" aria-pressed="false">Beaches</button>
+          <button class="gallery-category-button" type="button" data-category="Food" aria-pressed="false">Food</button>
+          <button class="gallery-category-button" type="button" data-category="Adventure" aria-pressed="false">Adventure</button>
+        </div>
+        <div class="gallery-secondary-filters">
+          <label><span class="filter-label">Destination</span><select id="gallery-destination"><option value="">All places</option><option value="kyoto">Kyoto</option><option value="amalfi">Amalfi Coast</option><option value="marrakech">Marrakech</option><option value="bali">Bali</option><option value="iceland">Iceland</option><option value="dolomites">The Dolomites</option><option value="paris">Paris</option><option value="peru">Peru</option><option value="tuscany">Tuscany</option></select></label>
+          <label class="gallery-search-field"><span class="filter-label">Search gallery</span><input id="gallery-search" type="search" placeholder="Search a place or feeling" autocomplete="off"></label>
+          <button class="gallery-clear-button" id="gallery-clear" type="button">Clear filters <span aria-hidden="true">↺</span></button>
+        </div>
+      </div>
+      <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+      <div class="gallery-empty-state" id="gallery-empty" hidden><span aria-hidden="true">⌖</span><h3>No photographs found.</h3><p>Try a different theme or destination, or clear the filters to see every field note.</p><button class="button detail-home-button" id="gallery-empty-clear" type="button">Show all photographs <span aria-hidden="true">↗</span></button></div>
+    </section>
+  </main>
+
+  <div class="gallery-lightbox" id="gallery-lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-destination" hidden>
+    <div class="lightbox-backdrop" data-lightbox-close></div>
+    <div class="lightbox-panel">
+      <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close photo viewer">×</button>
+      <button class="lightbox-nav lightbox-previous" id="lightbox-previous" type="button" aria-label="Previous photograph">←</button>
+      <figure class="lightbox-figure">
+        <div class="lightbox-image-wrap"><img id="lightbox-image" src="" alt=""></div>
+        <figcaption class="lightbox-caption"><div><p class="eyebrow" id="lightbox-category"></p><h2 id="lightbox-destination"></h2><p id="lightbox-description"></p></div><span class="lightbox-position" id="lightbox-position" aria-live="polite"></span></figcaption>
+      </figure>
+      <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next photograph">→</button>
+    </div>
+  </div>
+
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="index.html#stories">Instagram</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>

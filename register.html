@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Create a local Wanderly demo account to explore the sample travel experience.">
+  <title>Create an Account — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/auth.js" defer></script>
+  <script src="js/register.js" defer></script>
+</head>
+<body class="auth-page register-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+    <nav class="primary-nav details-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html#home">Home</a><a class="nav-link" href="index.html#destinations">Destinations</a><a class="nav-link" href="packages.html">Packages</a><a class="nav-link" href="hotels.html">Hotels</a><a class="nav-link" href="flights.html">Flights</a><a class="nav-link" href="itinerary.html">Itinerary</a><a class="nav-link" href="gallery.html">Gallery</a><a class="nav-link" href="reviews.html">Reviews</a><a class="nav-link" href="contact.html">Contact</a>
+      <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register" aria-current="page">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+    </nav>
+    <a class="nav-cta" href="login.html">Already a member? <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main id="main" class="auth-main">
+    <section class="auth-visual auth-register-visual"><div class="auth-visual-copy"><p class="eyebrow"><span class="hero-eyebrow-dot"></span> Your next story starts here</p><h1>Make room<br>for <em>more.</em></h1><p>Save the places you love, shape your plans, and find a little inspiration for wherever you’re headed.</p><span class="auth-photo-caption">A QUIETER CORNER OF THE WORLD <i>·</i> KYOTO, JAPAN</span></div></section>
+    <section class="auth-form-section"><div class="auth-form-card">
+      <p class="eyebrow"><span class="eyebrow-dash"></span> Join Wanderly</p><h2>Create your account</h2><p class="auth-form-intro">Set up a local demo profile to explore your personal Wanderly space.</p>
+      <p class="auth-demo-notice"><strong>Demo account only.</strong> Details stay in this browser. This is not production authentication.</p>
+      <form id="register-form" class="auth-form" novalidate>
+        <div class="auth-field"><label for="register-name">Full Name <span aria-hidden="true">*</span></label><input id="register-name" name="fullName" type="text" autocomplete="name" maxlength="100" required aria-describedby="register-name-error"><small class="auth-field-error" id="register-name-error"></small></div>
+        <div class="auth-field"><label for="register-email">Email Address <span aria-hidden="true">*</span></label><input id="register-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="register-email-error"><small class="auth-field-error" id="register-email-error"></small></div>
+        <div class="auth-field"><label for="register-password">Password <span aria-hidden="true">*</span></label><input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required aria-describedby="register-password-hint register-password-error"><small class="auth-field-hint" id="register-password-hint">At least 8 characters.</small><small class="auth-field-error" id="register-password-error"></small></div>
+        <div class="auth-field"><label for="register-confirm-password">Confirm Password <span aria-hidden="true">*</span></label><input id="register-confirm-password" name="confirmPassword" type="password" autocomplete="new-password" required aria-describedby="register-confirm-error"><small class="auth-field-error" id="register-confirm-error"></small></div>
+        <div class="auth-terms-field"><label><input id="register-terms" name="terms" type="checkbox" required><span>I understand this is a browser-only authentication demo.</span></label><small class="auth-field-error" id="register-terms-error"></small></div>
+        <p class="auth-status" id="register-status" role="status" aria-live="polite"></p>
+        <button class="button auth-submit" type="submit">Create Account <span aria-hidden="true">↗</span></button>
+      </form>
+      <p class="auth-switch">Already have a demo account? <a href="login.html">Log in</a></p>
+      <p class="auth-security-note">Passwords are hashed with SHA-256 in your browser before storage. Client-side storage and hashing do not make this secure for real accounts.</p>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="login.html">Login</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="See the details of a sample Wanderly travel package.">
+  <title>Package details — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/packages-data.js" defer></script>
+  <script src="js/hotels-data.js" defer></script>
+  <script src="js/package-details.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="package-details-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+      <nav class="primary-nav details-nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link active" href="packages.html">Packages</a>
+        <a class="nav-link" href="hotels.html">Hotels</a>
+        <a class="nav-link" href="flights.html">Flights</a>
+        <a class="nav-link" href="itinerary.html">Itinerary</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+        <a class="nav-link" href="index.html#experiences">Experiences</a>
+        <a class="nav-link" href="index.html#stories">Our story</a>
+            <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Plan your trip <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="package-detail-hero" aria-labelledby="package-title">
+      <img id="package-hero-image" class="package-detail-hero-image" src="" alt="">
+      <div class="package-detail-hero-shade"></div>
+      <div class="package-detail-hero-content">
+        <a class="detail-back-link" href="packages.html"><span aria-hidden="true">←</span> Back to tour packages</a>
+        <p class="eyebrow detail-eyebrow"><span class="hero-eyebrow-dot"></span><span id="package-destination"></span></p>
+        <h1 id="package-title">Find your next journey.</h1>
+        <p class="package-hero-meta"><span id="package-duration"></span><span>·</span> Sample price <strong id="package-price"></strong> <small>/ person</small></p>
+      </div>
+    </section>
+
+    <section class="package-detail-content section-wrap" id="package-detail-content">
+      <div class="package-detail-intro">
+        <div><p class="eyebrow"><span class="eyebrow-dash"></span> A journey, thoughtfully put together</p><h2 id="package-heading">A little more about this trip.</h2></div>
+        <p class="package-detail-description" id="package-description"></p>
+      </div>
+      <div class="package-photo-grid" id="package-photos" aria-label="Photos from this destination"></div>
+      <div class="package-detail-columns">
+        <section class="package-detail-list" aria-labelledby="highlights-title"><p class="eyebrow"><span class="eyebrow-dash"></span> The good bits</p><h2 id="highlights-title">Trip highlights</h2><ul id="package-highlights"></ul></section>
+        <section class="package-detail-list included-list" aria-labelledby="included-title"><p class="eyebrow"><span class="eyebrow-dash"></span> Taken care of</p><h2 id="included-title">Included in your trip</h2><div id="package-included"></div></section>
+      </div>
+      <section class="package-booking-box" aria-label="Sample package booking">
+        <div><p class="eyebrow">Your next story starts here</p><h2><span id="booking-price"></span> <small>/ person</small></h2><p>Sample price per traveler; taxes and personal expenses may vary.</p></div>
+        <div class="booking-action"><button class="button package-book-button" id="book-package" type="button">Book This Package <span aria-hidden="true">↗</span></button><a class="hotel-discovery-link" id="package-hotels-link" href="hotels.html">Explore hotels in this destination <span aria-hidden="true">↗</span></a><a class="hotel-discovery-link" id="package-flights-link" href="flights.html">Explore flights to this destination <span aria-hidden="true">↗</span></a><a class="hotel-discovery-link" id="package-itinerary-link" href="itinerary.html">Create Itinerary <span aria-hidden="true">↗</span></a><a class="hotel-discovery-link" id="package-reviews-link" href="reviews.html">Read package reviews <span aria-hidden="true">↗</span></a></div>
+      </section>
+    </section>
+
+    <section class="package-invalid section-wrap" id="package-invalid" hidden><span aria-hidden="true">⌖</span><p class="eyebrow"><span class="eyebrow-dash"></span> A little detour</p><h1>We couldn't find that journey.</h1><p>That package link may be out of date. Browse the available sample trips to find another way to wander.</p><a class="button detail-home-button" href="packages.html">Browse tour packages <span aria-hidden="true">↗</span></a></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="index.html#stories">Instagram</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Explore Wanderly demonstration reviews for destinations, hotels, and tour packages.">
+  <title>Reviews & Ratings — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/hotels-data.js" defer></script>
+  <script src="js/packages-data.js" defer></script>
+  <script src="js/reviews-data.js" defer></script>
+  <script src="js/reviews.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="reviews-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+    <nav class="primary-nav details-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html#home">Home</a><a class="nav-link" href="index.html#destinations">Destinations</a><a class="nav-link" href="packages.html">Packages</a><a class="nav-link" href="hotels.html">Hotels</a><a class="nav-link" href="flights.html">Flights</a><a class="nav-link" href="itinerary.html">Itinerary</a><a class="nav-link" href="gallery.html">Gallery</a><a class="nav-link active" href="reviews.html" aria-current="page">Reviews</a><a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+      </nav>
+    <a class="nav-cta" href="#reviews">Explore reviews <span aria-hidden="true">↗</span></a>
+  </div></header>
+  <main id="main">
+    <section class="reviews-hero"><div class="reviews-hero-inner">
+      <p class="eyebrow"><span class="hero-eyebrow-dot"></span> Notes from the road</p>
+      <h1>Every journey leaves<br><em>a story.</em></h1>
+      <p>Browse travel notes shared by the Wanderly community, from quiet Kyoto mornings to sunlit coastal stays.</p>
+    </div></section>
+    <section class="reviews-section section-wrap" id="reviews" aria-labelledby="reviews-heading">
+      <p class="reviews-demo-note"><span aria-hidden="true">✳</span> Demonstration reviews: sample entries are illustrative and are not verified customer reviews.</p>
+      <div class="reviews-summary" aria-label="Review rating summary">
+        <div class="reviews-average"><p class="eyebrow">Community rating</p><strong id="rating-average">—</strong><div class="rating-stars" id="average-stars" aria-label="Average rating"></div><p><span id="rating-total">0</span> reviews</p></div>
+        <div class="rating-breakdown" id="rating-breakdown" aria-label="Rating distribution"></div>
+      </div>
+      <div class="reviews-heading-row"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Shared perspectives</p><h2 id="reviews-heading">A little inspiration from fellow travelers.</h2></div><button class="button reviews-write-button" id="open-review-form" type="button">Write a Review <span aria-hidden="true">＋</span></button></div>
+      <div class="reviews-controls" aria-label="Review filters">
+        <label>Search reviews<input id="review-search" type="search" placeholder="Name or keyword" autocomplete="off"></label>
+        <label>Destination<select id="review-destination"><option value="">All destinations</option><option value="kyoto">Kyoto</option><option value="amalfi">Amalfi Coast</option><option value="marrakech">Marrakech</option></select></label>
+        <label>Category<select id="review-category"><option value="">All categories</option><option value="Destination">Destination</option><option value="Hotel">Hotel</option><option value="Tour Package">Tour Package</option></select></label>
+        <label>Specific item<select id="review-subject"><option value="">All items</option></select></label>
+        <label>Rating<select id="review-rating"><option value="">Any rating</option><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select></label>
+        <label>Sort by<select id="review-sort"><option value="recent">Most recent</option><option value="highest">Highest rated</option><option value="lowest">Lowest rated</option></select></label>
+        <button class="gallery-clear-button" id="clear-review-filters" type="button">Clear filters <span aria-hidden="true">↺</span></button>
+      </div>
+      <p class="reviews-result-count" id="reviews-result-count" aria-live="polite"></p>
+      <div class="reviews-grid" id="reviews-grid"></div>
+      <div class="gallery-empty-state reviews-empty" id="reviews-empty" hidden><span aria-hidden="true">✳</span><h3>No notes found yet</h3><p>Try another destination or clear your filters to see more reviews.</p><button class="button" id="empty-clear-filters" type="button">Clear filters <span aria-hidden="true">↺</span></button></div>
+    </section>
+  </main>
+  <dialog class="review-dialog" id="review-dialog" aria-labelledby="review-dialog-title">
+    <form class="review-form" id="review-form">
+      <div class="review-dialog-heading"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Add your perspective</p><h2 id="review-dialog-title">Write a review</h2></div><button class="review-dialog-close" type="button" id="close-review-form" aria-label="Close review form">×</button></div>
+      <p class="review-form-demo-note">Reviews are saved in this browser as community contributions.</p>
+      <div class="review-form-grid">
+        <label>Your name<input name="name" required maxlength="70" autocomplete="name"></label>
+        <label>Reviewing<select name="category" id="form-review-category" required><option value="">Choose a category</option><option value="Destination">Destination</option><option value="Hotel">Hotel</option><option value="Tour Package">Tour Package</option></select></label>
+        <label class="form-review-subject-wrap">What are you reviewing?<select name="subjectId" id="form-review-subject" required disabled><option value="">Choose a category first</option></select></label>
+        <label>Your rating<select name="rating" required><option value="">Select a rating</option><option value="5">★★★★★ — Loved it</option><option value="4">★★★★☆ — Great</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Needs improvement</option></select></label>
+        <label class="review-form-full">Review title<input name="title" required maxlength="100"></label>
+        <label class="review-form-full">Your review<textarea name="text" required minlength="12" maxlength="700" rows="5" placeholder="What would you want another traveler to know?"></textarea></label>
+      </div>
+      <p class="review-form-message" id="review-form-message" role="status"></p>
+      <div class="review-form-actions"><button class="button button-outline" type="button" id="cancel-review-form">Cancel</button><button class="button" type="submit">Submit review <span aria-hidden="true">↗</span></button></div>
+    </form>
+  </dialog>
+  <div class="review-success-toast" id="review-success" role="status" aria-live="polite"></div>
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="index.html#stories">Instagram</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+// Editorial image selection for the Gallery page. Thumbnail crops are used only
+// in the grid; the lightbox uses a fit=max URL to show each full photograph.
+window.WANDERLY_GALLERY = [
+  { id: "kyoto-lantern-lane", destination: "Kyoto", destinationId: "kyoto", caption: "Lanterns mark the turn into Kyoto’s old lanes.", category: "Culture", alt: "Traditional Kyoto street with wooden houses and a warm evening glow", size: "tall", photo: "photo-1493976040374-85c8e12f0c0e" },
+  { id: "kyoto-torii-path", destination: "Kyoto", destinationId: "kyoto", caption: "A quiet pause beneath a thousand vermilion gates.", category: "Architecture", alt: "Rows of red torii gates on a Kyoto shrine path", size: "wide", photo: "photo-1528360983277-13d401cdc186" },
+  { id: "kyoto-pagoda", destination: "Kyoto", destinationId: "kyoto", caption: "The city’s rooftops settle into the green hills.", category: "Architecture", alt: "A Kyoto pagoda framed by trees", size: "standard", photo: "photo-1478436127897-769e1b3f0f36" },
+  { id: "amalfi-coastline", destination: "Amalfi Coast", destinationId: "amalfi", caption: "Pastel villages follow the curve of the coastline.", category: "Beaches", alt: "Cliffside Amalfi Coast village above the blue Mediterranean", size: "tall", photo: "photo-1533105079780-92b9be482077" },
+  { id: "amalfi-village", destination: "Amalfi Coast", destinationId: "amalfi", caption: "A winding path leads down toward the water.", category: "Architecture", alt: "Colorful Italian coastal village tucked into the hills", size: "standard", photo: "photo-1516483638261-f4dbaf036963" },
+  { id: "amalfi-hillside", destination: "Amalfi Coast", destinationId: "amalfi", caption: "A hillside village held between mountain and sea.", category: "Nature", alt: "Amalfi Coast village on a green mountain above the sea", size: "wide", photo: "photo-1686834098237-1db91509c5a5" },
+  { id: "marrakech-medina", destination: "Marrakech", destinationId: "marrakech", caption: "Terracotta walls catch the last light of the day.", category: "Architecture", alt: "Warm terracotta architecture and palm trees in Marrakech", size: "standard", photo: "photo-1539020140153-e479b8c22e70" },
+  { id: "marrakech-market", destination: "Marrakech", destinationId: "marrakech", caption: "A medina lane full of color, craft, and conversation.", category: "Culture", alt: "Colorful rugs and market life in a Marrakech medina lane", size: "tall", photo: "photo-1727640567241-3fe715bde6d2" },
+  { id: "marrakech-rooftops", destination: "Marrakech", destinationId: "marrakech", caption: "A maze of rooftops opens toward the Atlas horizon.", category: "Culture", alt: "Marrakech rooftops and traditional Moroccan architecture", size: "wide", photo: "photo-1512453979798-5ea266f8880c" },
+  { id: "bali-blue", destination: "Bali", destinationId: "bali", caption: "A palm-fringed shore for a long, unhurried afternoon.", category: "Beaches", alt: "Aerial view of Bali coast and turquoise water", size: "wide", photo: "photo-1537996194471-e657df975ab4" },
+  { id: "iceland-light", destination: "Iceland", destinationId: "iceland", caption: "Northern lights ripple above a still winter lake.", category: "Nature", alt: "Green aurora above snow-covered Icelandic mountains and a lake", size: "tall", photo: "photo-1488415032361-b7e238421f1b" },
+  { id: "dolomites-trail", destination: "The Dolomites", destinationId: "dolomites", caption: "A high trail winds into the quiet of the mountains.", category: "Adventure", alt: "Jagged Dolomite peaks beneath a star-filled alpine sky", size: "standard", photo: "photo-1519681393784-d120267933ba" },
+  { id: "paris-rooftops", destination: "Paris", destinationId: "paris", caption: "The rooftops turn gold as the city slows for evening.", category: "Architecture", alt: "Paris rooftops and the Eiffel Tower in warm evening light", size: "wide", photo: "photo-1502602898657-3e91760cbb34" },
+  { id: "peru-highlands", destination: "Peru", destinationId: "peru", caption: "Stone paths trace the ridgeline through the Andes.", category: "Adventure", alt: "Ancient stone terraces among the Peruvian Andes", size: "tall", photo: "photo-1526392060635-9d6019884377" },
+  { id: "tuscany-table", destination: "Tuscany", destinationId: "tuscany", caption: "A country table is best when lunch takes its time.", category: "Food", alt: "A rustic Italian table set with fresh seasonal food", size: "standard", photo: "photo-1504674900247-0877df9cc836" }
+].map((image) => ({
+  ...image,
+  thumbnail: `https://images.unsplash.com/${image.photo}?auto=format&fit=crop&w=1000&q=85`,
+  full: `https://images.unsplash.com/${image.photo}?auto=format&fit=max&w=2200&q=90`
+}));

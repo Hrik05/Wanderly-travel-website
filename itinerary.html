@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Build and save a personal day-by-day Wanderly travel itinerary in your browser.">
+  <title>My itinerary — Wanderly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/packages-data.js" defer></script>
+  <script src="js/hotels-data.js" defer></script>
+  <script src="js/flights-data.js" defer></script>
+  <script src="js/itinerary.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</head>
+<body class="itinerary-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Wanderly home"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a>
+      <nav class="primary-nav details-nav" aria-label="Main navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#destinations">Destinations</a>
+        <a class="nav-link" href="packages.html">Packages</a>
+        <a class="nav-link" href="hotels.html">Hotels</a>
+        <a class="nav-link" href="flights.html">Flights</a>
+        <a class="nav-link active" href="itinerary.html">Itinerary</a>
+        <a class="nav-link" href="gallery.html">Gallery</a>
+        <a class="nav-link" href="reviews.html">Reviews</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link auth-nav-link" href="login.html" data-auth-link="login">Login</a><a class="nav-link auth-nav-link" href="register.html" data-auth-link="register">Register</a><a class="nav-link auth-nav-link" href="account.html" data-auth-link="account" hidden>Account</a><a class="nav-link auth-nav-link" href="admin.html" data-auth-link="admin" hidden>Admin</a>
+      </nav>
+      <a class="nav-cta" href="index.html#contact">Plan your trip <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="itinerary-hero">
+      <div class="itinerary-hero-inner">
+        <a class="packages-back-link" href="index.html">← Back to Wanderly</a>
+        <p class="eyebrow"><span class="eyebrow-dash"></span> Make room for the moments</p>
+        <h1>A trip that’s<br><em>yours to make.</em></h1>
+        <p>Gather the places, little plans, and pauses you want to remember.</p>
+      </div>
+      <div class="packages-hero-note">YOUR TRIP, YOUR PACE <span>·</span> SAVED IN THIS BROWSER</div>
+    </section>
+
+    <section class="itinerary-workspace section-wrap" aria-label="Itinerary planner">
+      <aside class="saved-trips-panel" aria-labelledby="saved-trips-title">
+        <div class="saved-trips-heading"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Your notebook</p><h2 id="saved-trips-title">Saved trips</h2></div><button class="new-trip-button" id="new-itinerary" type="button" aria-label="Create a new itinerary">+</button></div>
+        <div id="saved-itinerary-list" class="saved-itinerary-list"></div>
+        <div id="saved-itinerary-empty" class="saved-itinerary-empty"><span aria-hidden="true">✳</span><p>Your saved itineraries will live here. Start with a new trip whenever you’re ready.</p><button class="button detail-home-button" id="empty-create-itinerary" type="button">Create an itinerary <span aria-hidden="true">↗</span></button></div>
+      </aside>
+
+      <section class="itinerary-editor" aria-label="Trip editor">
+        <div class="itinerary-welcome" id="itinerary-welcome"><span aria-hidden="true">⌖</span><p class="eyebrow"><span class="eyebrow-dash"></span> A fresh page</p><h2>Every good trip starts somewhere.</h2><p>Create a plan, choose your destination, and add the small moments you’re looking forward to.</p><button class="button detail-home-button" id="welcome-create-itinerary" type="button">Create an itinerary <span aria-hidden="true">↗</span></button></div>
+
+        <div class="itinerary-editor-content" id="itinerary-editor-content" hidden>
+          <div class="itinerary-editor-heading"><div><p class="eyebrow"><span class="eyebrow-dash"></span> Your travel notebook</p><h2 id="editor-heading">Plan your trip.</h2></div><span class="draft-badge" id="draft-badge">NEW PLAN</span></div>
+          <form id="itinerary-metadata-form" class="itinerary-metadata-form" novalidate>
+            <div class="itinerary-form-grid">
+              <label class="trip-name-field"><span class="filter-label">Trip name</span><input id="trip-name" type="text" maxlength="80" placeholder="A slow week in Kyoto" required></label>
+              <label><span class="filter-label">Destination</span><select id="trip-destination" required><option value="">Choose a destination</option><option value="kyoto">Kyoto</option><option value="amalfi">Amalfi Coast</option><option value="marrakech">Marrakech</option></select></label>
+              <label><span class="filter-label">Start date</span><input id="trip-start-date" type="date" required></label>
+              <label><span class="filter-label">End date</span><input id="trip-end-date" type="date" required></label>
+              <label><span class="filter-label">Travelers</span><select id="trip-travelers"><option value="1">1 traveler</option><option value="2" selected>2 travelers</option><option value="3">3 travelers</option><option value="4">4 travelers</option><option value="5">5 travelers</option><option value="6">6 travelers</option></select></label>
+              <label class="trip-description-field"><span class="filter-label">A note about this trip</span><textarea id="trip-description" rows="3" maxlength="400" placeholder="What are you hoping to find along the way?"></textarea></label>
+            </div>
+            <p class="itinerary-form-message" id="itinerary-form-message" aria-live="polite"></p>
+            <div class="itinerary-save-actions"><button class="button detail-home-button itinerary-save-button" type="submit">Save itinerary <span aria-hidden="true">↗</span></button><button class="itinerary-cancel-button" id="cancel-itinerary" type="button">Cancel</button><p class="itinerary-save-feedback" id="itinerary-save-feedback" aria-live="polite"></p></div>
+          </form>
+
+          <section class="itinerary-days-section" aria-labelledby="days-title"><div class="itinerary-days-heading"><div><p class="eyebrow"><span class="eyebrow-dash"></span> One day at a time</p><h2 id="days-title">Your itinerary</h2></div><button class="add-day-button" id="add-itinerary-day" type="button"><span aria-hidden="true">+</span> Add a day</button></div><p class="days-guidance" id="days-guidance">Add your trip dates to start laying out the days.</p><div id="itinerary-days" class="itinerary-days"></div></section>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-top"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">w</span><span>Wanderly<span class="brand-period">.</span></span></a><p>Explore beyond boundaries.</p><a class="back-top" href="#main">Back to top ↑</a></div><div class="footer-bottom"><span>© <span id="current-year"></span> Wanderly Travel Co.</span><span>Made for the moments that move you.</span><div class="footer-links"><a href="index.html#stories">Instagram</a><a href="contact.html">Contact Us</a></div></div></footer>
+</body>
+</html>
